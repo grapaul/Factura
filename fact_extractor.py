@@ -588,14 +588,12 @@ def compareConstitTypes(rule_elem, data_elem):
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Fact extractor')
-	parser.add_argument('--rules', type=str, default='./Rules2', help='directory with rules')
-	parser.add_argument('--parsing', type=str, default='Outputs/corpus.parsing.json', help='file with parsing results')
+	parser.add_argument('--rules', type=str, default='./Rules_23', help='directory with rules')
 	parser.add_argument('--output', type=str, default='tmp/extracted_facts.json', help='fact extraction results')
 	parser.add_argument('--verbosity', type=int, default=1, help='print messages to screen')
 
 	args = parser.parse_args()
 	rules_dir = args.rules
-	parsing_path = args.parsing
 	output_path = args.output
 	verbosity = args.verbosity
 
