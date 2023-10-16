@@ -21,18 +21,18 @@ SubFacts:
             Lex: продать|продавать|передать|передавать
           - D: Company
             ConstituentType: NP
-            Morph: accs
+            Morph: Case=Acc
           - E: Preposition
             LexNonHead: за
           - F: Price
             ConstituentType: NP
           - G: Buyer
             ConstituentType: NP
-            Morph: datv
+            Morph: Case=Dat
 
         Links: 
-          - B,A: subject
-          - C,D: object
+          - B,A: nsubj
+          - C,D: obj
 
     - SubFact:
         Name: Company_Put_On_Sale
@@ -49,7 +49,7 @@ SubFacts:
             Lex: выставить|выставлять
           - C: Company
             ConstituentType: NP
-            Morph: accs
+            Morph: Case=Acc
           - E: Dummy
             LexNonHead: на
           - F: Sell
@@ -57,9 +57,9 @@ SubFacts:
             Lex: продажа
 
         Links: 
-          - B,A: subject
-          - B,C: object
-          - F,E: preposition
+          - B,A: nsubj
+          - B,C: obj
+          - F,E: case
 
     - SubFact:
         Name: Company_Ready_To_Sell
@@ -83,10 +83,9 @@ SubFacts:
             ConstituentType: NP
 
         Links: 
-          - B,A: subject
-          - B,D: prep_modifier
-          - D,C: preposition
-          - D,F: np_gen_argument
+          - B,A: nsubj
+          - D,C: case
+          - D,F: nmod
 
     - SubFact:
         Name: Company_Buy
@@ -109,13 +108,13 @@ SubFacts:
             ConstituentType: NP
 
         Links: 
-          - B,A: subject
-          - B,C: object
-          - E,D: preposition
+          - B,A: nsubj
+          - B,C: obj
+          - E,D: case
 
     - SubFact:
         Name: Company_Sell
-        # 4EX: Газпром продал сбербанк за 5 мдрд
+        # 4EX: Газпром продал сбербанк за 5 млрд
 
         Participants: 
           - Obligatory: Company, Company_2
@@ -134,9 +133,9 @@ SubFacts:
             ConstituentType: NP
 
         Links: 
-          - B,A: subject
-          - B,C: object
-          - E,D: preposition
+          - B,A: nsubj
+          - B,C: obj
+          - E,D: nmod
 
     - SubFact:
         Name: Got_Control_Over
@@ -158,9 +157,9 @@ SubFacts:
             ConstituentType: NP
 
         Links: 
-          - B,A: subject
-          - B,C: object
-          - E,D: preposition
+          - B,A: nsubj
+          - B,C: obj
+          - E,D: nmod
 
 
     - SubFact:
@@ -183,16 +182,16 @@ SubFacts:
             Lex: продажа
           - F: Company_2
             ConstituentType: NP
-            Morph: gent
+            Morph: Case=Gen
 
         Links: 
-          - B,A: subject
-          - E,D: preposition
-          - E,F: np_gen_argument
+          - B,A: subj
+          - E,D: case
+          - E,F: nmod
 
     - SubFact:
         Name: Arranged_Buying
-        # 4EX: Газпром договорился о продаже Сбербанка
+        # 4EX: Газпром договорился о покупке Сбербанка
 
         Participants: 
           - Obligatory: Company, Buying
@@ -210,12 +209,12 @@ SubFacts:
             Lex: покупка
           - F: Company_2
             ConstituentType: NP
-            Morph: gent
+            Morph: Case=Gen
 
         Links: 
-          - B,A: subject
-          - E,D: preposition
-          - E,F: np_gen_argument
+          - B,A: subj
+          - E,D: case
+          - E,F: nmod
 
     - SubFact:
         Name: Company_Change_Boss
@@ -233,8 +232,8 @@ SubFacts:
             Lex: директор|гендиректор|руководство|руководитель
 
         Links: 
-          - B,A: subject
-          - B,C: object
+          - B,A: nsubj
+          - B,C: obj
 
     - SubFact:
         Name: Company_New_Boss
@@ -251,8 +250,8 @@ SubFacts:
             ConstituentType: NP
 
         Links: 
-          - B,A: subject
-          - B,C: object
+          - B,A: nsubj
+          - B,C: obj
 
     - SubFact:
         Name: Company_New_Boss2
@@ -268,9 +267,9 @@ SubFacts:
           - C: Job
             ConstituentType: NP
             Lex: директор|председатель|руководитель|владелец|совладелец
-            Morph: ablt
+            Morph: Case=Ins
 
         Links: 
-          - B,A: subject
-          - B,C: one
+          - B,A: nsubj
+          - B,C: obl
 
