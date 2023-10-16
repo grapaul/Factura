@@ -1,0 +1,276 @@
+FactName: Companies
+
+Priority: 1
+
+SubFacts:
+
+    - SubFact:
+        Name: Company_Ready_To_Sell
+        # 4EX: X готов продать предприятие
+
+        Participants: 
+          - Obligatory: Seller, Company, Ready
+          - Optional: Preposition, Price, Buyer
+
+        Items:
+          - A: Seller
+            ConstituentType: NP
+          - B: Ready
+            Lex: готовый|готовиться|решать|решить|решаться|решиться
+          - C: Key
+            Lex: продать|продавать|передать|передавать
+          - D: Company
+            ConstituentType: NP
+            Morph: accs
+          - E: Preposition
+            LexNonHead: за
+          - F: Price
+            ConstituentType: NP
+          - G: Buyer
+            ConstituentType: NP
+            Morph: datv
+
+        Links: 
+          - B,A: subject
+          - C,D: object
+
+    - SubFact:
+        Name: Company_Put_On_Sale
+        # 4EX: X выставил предприятие на продажу
+
+        Participants: 
+          - Obligatory: Seller, Company, Sell
+          - Optional: Preposition, Price, Buyer
+
+        Items:
+          - A: Seller
+            ConstituentType: NP
+          - B: Key
+            Lex: выставить|выставлять
+          - C: Company
+            ConstituentType: NP
+            Morph: accs
+          - E: Dummy
+            LexNonHead: на
+          - F: Sell
+            ConstituentType: NP
+            Lex: продажа
+
+        Links: 
+          - B,A: subject
+          - B,C: object
+          - F,E: preposition
+
+    - SubFact:
+        Name: Company_Ready_To_Sell
+        # 4EX: X заявил о продаже предприятия
+
+        Participants: 
+          - Obligatory: Seller, Sell
+          - Optional: Company
+
+        Items:
+          - A: Seller
+            ConstituentType: NP
+          - B: Key
+            Lex: заявить|заявлять|объявить|объявлять|сообщить|сообщать
+          - C: Dummy
+            LexNonHead: о
+          - D: Sell
+            ConstituentType: NP
+            Lex: продажа
+          - F: Company
+            ConstituentType: NP
+
+        Links: 
+          - B,A: subject
+          - B,D: prep_modifier
+          - D,C: preposition
+          - D,F: np_gen_argument
+
+    - SubFact:
+        Name: Company_Buy
+        # 4EX: Газпром купил Сбербанк за 5 млрд
+
+        Participants: 
+          - Obligatory: Company, Company_2
+          - Optional: Price, Preposition
+
+        Items:
+          - A: Company
+            ConstituentType: NP
+          - B: Key
+            Lex: купить|покупать|приобретать|приобрести|выкупить|выкупать
+          - C: Company_2
+            ConstituentType: NP
+          - D: Preposition
+            LexNonHead: за
+          - E: Price
+            ConstituentType: NP
+
+        Links: 
+          - B,A: subject
+          - B,C: object
+          - E,D: preposition
+
+    - SubFact:
+        Name: Company_Sell
+        # 4EX: Газпром продал сбербанк за 5 мдрд
+
+        Participants: 
+          - Obligatory: Company, Company_2
+          - Optional: Price, Preposition
+
+        Items:
+          - A: Company
+            ConstituentType: NP
+          - B: Key
+            Lex: продать|продавать|передать|передавать
+          - C: Company_2
+            ConstituentType: NP
+          - D: Preposition
+            LexNonHead: за
+          - E: Price
+            ConstituentType: NP
+
+        Links: 
+          - B,A: subject
+          - B,C: object
+          - E,D: preposition
+
+    - SubFact:
+        Name: Got_Control_Over
+        # 4EX: Газпром получил контроль над сбербанком
+
+        Participants: 
+          - Obligatory: Company, Company_2, Control
+        Items:
+          - A: Company
+            ConstituentType: NP
+          - B: Key
+            Lex: получить|получать
+          - C: Control
+            ConstituentType: NP
+            Lex: контроль
+          - D: Dummy
+            LexNonHead: надо|над
+          - E: Company_2
+            ConstituentType: NP
+
+        Links: 
+          - B,A: subject
+          - B,C: object
+          - E,D: preposition
+
+
+    - SubFact:
+        Name: Arranged_Selling
+        # 4EX: Газпром договорился о продаже Сбербанка
+
+        Participants: 
+          - Obligatory: Company, Sell
+          - Optional:  Company_2
+
+        Items:
+          - A: Company
+            ConstituentType: NP
+          - B: Key
+            Lex: договориться|договариваться
+          - D: Dummy
+            LexNonHead: о
+          - E: Sell
+            ConstituentType: NP
+            Lex: продажа
+          - F: Company_2
+            ConstituentType: NP
+            Morph: gent
+
+        Links: 
+          - B,A: subject
+          - E,D: preposition
+          - E,F: np_gen_argument
+
+    - SubFact:
+        Name: Arranged_Buying
+        # 4EX: Газпром договорился о продаже Сбербанка
+
+        Participants: 
+          - Obligatory: Company, Buying
+          - Optional:  Company_2
+
+        Items:
+          - A: Company
+            ConstituentType: NP
+          - B: Key
+            Lex: договориться|договариваться
+          - D: Dummy
+            LexNonHead: о
+          - E: Buying
+            ConstituentType: NP
+            Lex: покупка
+          - F: Company_2
+            ConstituentType: NP
+            Morph: gent
+
+        Links: 
+          - B,A: subject
+          - E,D: preposition
+          - E,F: np_gen_argument
+
+    - SubFact:
+        Name: Company_Change_Boss
+        # 4EX: Сбербанк сменил директора
+
+        Participants: 
+          - Obligatory: Company, Boss
+        Items:
+          - A: Company
+            ConstituentType: NP
+          - B: Key
+            Lex: сменить|сменять
+          - C: Boss
+            ConstituentType: NP
+            Lex: директор|гендиректор|руководство|руководитель
+
+        Links: 
+          - B,A: subject
+          - B,C: object
+
+    - SubFact:
+        Name: Company_New_Boss
+        # 4EX: Иванов возглавил Сбербанк
+
+        Participants: 
+          - Obligatory: Company, Boss
+        Items:
+          - A: Boss
+            ConstituentType: NP
+          - B: Key
+            Lex: возглавил|возглавлять
+          - C: Company
+            ConstituentType: NP
+
+        Links: 
+          - B,A: subject
+          - B,C: object
+
+    - SubFact:
+        Name: Company_New_Boss2
+        # 4EX: Иванов стал директором Сбербанка
+
+        Participants: 
+          - Obligatory: Boss, Job
+        Items:
+          - A: Boss
+            ConstituentType: NP
+          - B: Key
+            Lex: стать|становиться
+          - C: Job
+            ConstituentType: NP
+            Lex: директор|председатель|руководитель|владелец|совладелец
+            Morph: ablt
+
+        Links: 
+          - B,A: subject
+          - B,C: one
+
