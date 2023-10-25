@@ -357,7 +357,7 @@ class SubFactRule:
 
 							slot_filling = 'token'
 							if matched_token.constituent:
-								if matched_token.constituent['is_head'] is True and matched_token.constituent['name'] == 'NP':
+								if matched_token.constituent['is_head'] is True and matched_token.constituent['name'] in ['NP', 'VP']:
 									slot_filling = 'constituent'
 								elif matched_token.constituent['is_head'] is True and matched_token.rule_elem is not None and matched_token.rule_elem.Show == 'Constituent':
 									slot_filling = 'constituent'
