@@ -1,0 +1,37 @@
+FactName: AuthorityStatement
+
+Priority: 1
+
+SubFacts:
+
+
+    - SubFact:
+        Name: 5
+        # Глава ПКР заявил, что многие страны выступили против отстранения России.
+
+        Participants:
+          - Obligatory: Speaker, ThemeKey, ThemeSubj, ThemeObj
+
+        Items:
+          - A: Key
+            ConstituentType: VP
+            Morph: VERB
+            Lex: заявить|утверждать|высказывать|сообщить|объявить|предупредить
+          - B: Speaker
+            ConstituentType: NP
+            Morph: Case=Nom
+          - C: ThemeKey
+            ConstituentType: VP
+            Morph: VERB
+#          - D: ThemeSubj
+#            ConstituentType: NP
+#            Morph: Case=Nom
+#          - E: ThemeObj
+#            ConstituentType: NP
+
+        Links: 
+          - A,B: nsubj
+          - A,C: ccomp
+#         - C,D: nsubj
+#         - C,E: obl
+
