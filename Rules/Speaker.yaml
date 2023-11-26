@@ -4,6 +4,105 @@ Priority: 1
 
 SubFacts:
 
+    - SubFact:
+        Name: 1
+        # Министр здравоохранения заявил о необходимости ужесточения карантина.
+
+        Participants:
+          - Obligatory: Dummy, Theme, Speaker
+
+        Items:
+          - A: Key
+            ConstituentType: VP
+            Morph: VERB
+            Lex: заявить|утверждать|высказывать|сообщить|объявить|предупредить
+          - B: Speaker
+            ConstituentType: NP
+            Morph: Case=Nom
+          - C: Dummy
+            LexNonHead: о
+          - D: Theme
+            ConstituentType: NP
+            Morph: NOUN, Case=Loc
+
+        Links: 
+          - A,B: nsubj
+          - D,C: case
+          - A,D: obl
+
+    - SubFact:
+        Name: 2
+        # В МИД РФ раскритиковали заявление НАТО по теме Арктики.
+
+        Participants:
+          - Obligatory: Theme, Dummy, Source
+
+        Items:
+          - A: Key
+            ConstituentType: VP
+            Morph: VERB
+            Lex: раскритиковать|осудить|назвать
+          - B: Dummy
+            LexNonHead: в
+          - C: Source
+            ConstituentType: NP
+            Morph: Case=Loc
+          - D: Theme
+            ConstituentType: NP
+            Morph: NOUN, Case=Acc
+
+        Links: 
+          - C,B: case
+          - A,D: obj
+          - A,C: obl
+
+    - SubFact:
+        Name: 3
+        # Глава ПКР осудил решение об отстранении России.
+
+        Participants:
+          - Obligatory: Speaker, Theme
+
+        Items:
+          - A: Key
+            ConstituentType: VP
+            Morph: VERB
+            Lex: раскритиковать|осудить
+          - B: Speaker
+            ConstituentType: NP
+            Morph: Case=Nom
+          - C: Theme
+            ConstituentType: NP
+            Morph: NOUN, Case=Acc
+
+        Links: 
+          - A,B: nsubj
+          - A,C: obj   
+
+    - SubFact:
+        Name: 4
+        # Татьяна Тарасова назвала заявление Алены Косторной вызывающим.
+
+        Participants:
+          - Obligatory: Speaker, Theme, Description
+
+        Items:
+          - A: Key
+            ConstituentType: VP
+            Morph: VERB
+            Lex: раскритиковать|осудить|назвать
+          - B: Speaker
+            ConstituentType: NP
+            Morph: Case=Nom
+          - C: Theme
+            ConstituentType: NP
+            Morph: NOUN, Case=Acc
+          - D: Description
+
+        Links: 
+          - A,B: nsubj
+          - A,C: obj
+          - A,D: xcomp
 
     - SubFact:
         Name: 5
@@ -23,15 +122,45 @@ SubFacts:
           - C: ThemeKey
             ConstituentType: VP
             Morph: VERB
-#          - D: ThemeSubj
-#            ConstituentType: NP
-#            Morph: Case=Nom
-#          - E: ThemeObj
-#            ConstituentType: NP
+          - D: ThemeSubj
+            ConstituentType: NP
+            Morph: Case=Nom
+          - E: ThemeObj
+            ConstituentType: NP
 
         Links: 
           - A,B: nsubj
           - A,C: ccomp
-#         - C,D: nsubj
-#         - C,E: obl
+          - C,D: nsubj
+          - C,E: obl
 
+
+    - SubFact:
+        Name: 6
+        # Представитель МИД выступил с заявлением о ситуации на международной арене.
+
+        Participants:
+          - Obligatory: Speaker, Dummy, Speech, Theme
+
+        Items:
+          - A: Key
+            ConstituentType: VP
+            Morph: VERB
+            Lex: выступил
+          - B: Speaker
+            ConstituentType: NP
+            Morph: Case=Nom
+          - D: Dummy
+            LexNonHead: с
+          - E: Speech
+            ConstituentType: NP
+            Moprh: Case=Ins
+            Lex: заявление|речь
+          - F: Theme
+            ConstituentType: NP
+            Morph: NOUN, Case=Acc
+
+        Links: 
+          - A,B: nsubj
+          - A,E: obl
+          - A,F: obj  

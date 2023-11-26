@@ -378,7 +378,7 @@ class write_json:
                         if param.xps:
                             all_xps_txt = select_spec_cons(brackets_l, brackets_r, sent_w_dicts, phrase_dict, param.selected_cons, param.emb)[1]
                             all_xps_dict = select_spec_cons(brackets_l, brackets_r, sent_w_dicts, phrase_dict, param.selected_cons, param.emb)[2]
-                        if verbosity: print(sent_w_dicts, "\n")
+#                        if verbosity: print(sent_w_dicts, "\n")
                         json_parse.append(create_json(sentence, sent_w_dicts, sent_parse, all_xps_txt, all_xps_dict, s_id, sent_text, 0, head_set, param.parse_w_stanza))
                     else:
                         print(const, check_head(const, sent_w_dicts)[1])
