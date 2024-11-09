@@ -7,7 +7,7 @@
 
 
 ```
-python3 fact_extractor.py --rules ./Rules_23 --output ./tmp/extracted_facts.json
+python3 fact_extractor.py --rules ./Rules --output ./tmp/extracted_facts.json
 ```
 
 Опция --rules позволяет указывать папку с правилами. По умолчанию правила ищутся в папке Rules. Программа обходит рекурсивно все подкаталоги в указанном каталоге и обрабатывает все файлы с расширением yaml.
